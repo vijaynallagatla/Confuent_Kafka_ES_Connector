@@ -1,6 +1,6 @@
 #bin/sh
 echo "=====================================Creating Connector============================================="
-es=10.0.0.223
+es=$HOST_IP
 data='
 {
   "name": "elasticsearch-sink",
@@ -19,4 +19,4 @@ data='
 
 sed -i 's/\r$//' $data
 echo $data
-curl -v -H "Content-Type: application/json" --data "$data" http://10.0.0.223:8084/connectors
+curl -v -H "Content-Type: application/json" --data "$data" http://$HOST_IP:8084/connectors
